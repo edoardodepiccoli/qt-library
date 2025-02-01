@@ -12,6 +12,7 @@ SOURCES += \
     book.cpp \
     debugvisitor.cpp \
     item.cpp \
+    library.cpp \
     main.cpp \
     mainwindow.cpp \
     movie.cpp \
@@ -21,6 +22,7 @@ HEADERS += \
     book.h \
     debugvisitor.h \
     item.h \
+    library.h \
     mainwindow.h \
     movie.h \
     visitor.h
