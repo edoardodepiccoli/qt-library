@@ -5,6 +5,11 @@ Movie::Movie(QString title, int year)
 {
 }
 
+void Movie::accept(Visitor *visitor)
+{
+    visitor->visitMovie(this);
+}
+
 int Movie::getYear() const
 {
     return year;

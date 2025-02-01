@@ -1,6 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include "visitor.h"
 #include <QString>
 
 class Item
@@ -11,6 +12,8 @@ private:
 public:
     Item(QString title);
     virtual ~Item() = default;
+
+    virtual void accept(Visitor *visitor);
 
     virtual int getId() const;
     virtual void setId(int newId);

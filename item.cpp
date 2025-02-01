@@ -5,6 +5,11 @@ Item::Item(QString title)
 {
 }
 
+void Item::accept(Visitor *visitor)
+{
+    visitor->visitItem(this);
+}
+
 int Item::getId() const
 {
     return id;

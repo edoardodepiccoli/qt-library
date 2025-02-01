@@ -5,6 +5,11 @@ Book::Book(QString title, QString author)
 {
 }
 
+void Book::accept(Visitor *visitor)
+{
+    visitor->visitBook(this);
+}
+
 QString Book::getAuthor() const
 {
     return author;

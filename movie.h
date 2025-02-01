@@ -10,6 +10,8 @@ private:
 public:
     Movie(QString title, int year);
 
+    virtual void accept(Visitor *visitor);
+
     int getYear() const;
     void setYear(int newYear);
 };

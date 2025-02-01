@@ -10,6 +10,8 @@ private:
 public:
     Book(QString title, QString author);
 
+    virtual void accept(Visitor *visitor);
+
     QString getAuthor() const;
     void setAuthor(QString newAuthor);
 };
