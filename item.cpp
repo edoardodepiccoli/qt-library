@@ -1,8 +1,10 @@
 #include "item.h"
+#include <QRandomGenerator>
 
 Item::Item(QString title)
     : title(title)
 {
+    id = QRandomGenerator::global()->bounded(0, 1000000001);
 }
 
 void Item::accept(Visitor *visitor)
