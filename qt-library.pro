@@ -13,13 +13,15 @@ SOURCES += \
     item.cpp \
     main.cpp \
     mainwindow.cpp \
-    movie.cpp
+    movie.cpp \
+    visitor.cpp
 
 HEADERS += \
     book.h \
     item.h \
     mainwindow.h \
-    movie.h
+    movie.h \
+    visitor.h
 
 FORMS += \
     mainwindow.ui
