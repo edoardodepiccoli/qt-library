@@ -10,7 +10,7 @@ private:
 public:
     Book(QString title, QString author);
 
-    QString getAuthor();
+    QString getAuthor() const;
     void setAuthor(QString newAuthor);
 };
 

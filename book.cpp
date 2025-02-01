@@ -5,7 +5,7 @@ Book::Book(QString title, QString author)
 {
 }
 
-QString Book::getAuthor()
+QString Book::getAuthor() const
 {
     return author;
 }
