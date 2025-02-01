@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     book.cpp \
+    debugvisitor.cpp \
     item.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     book.h \
+    debugvisitor.h \
     item.h \
     mainwindow.h \
     movie.h \
