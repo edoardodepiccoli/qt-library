@@ -5,11 +5,6 @@ Item::Item(QString title)
 {
 }
 
-Item::Item(int id, QString title)
-    : title(title), id(id)
-{
-}
-
 int Item::getId() const
 {
     return id;
