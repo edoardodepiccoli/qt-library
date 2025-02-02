@@ -19,6 +19,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     movie.cpp \
+    navbar.cpp \
     visitor.cpp
 
 HEADERS += \
@@ -28,6 +29,7 @@ HEADERS += \
     library.h \
     mainwindow.h \
     movie.h \
+    navbar.h \
     visitor.h
 
 FORMS += \

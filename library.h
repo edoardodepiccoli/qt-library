@@ -11,7 +11,10 @@ private:
 public:
     Library();
 
+    std::vector<Item *> getItems() const;
+
     void addItem(Item *item);
+    void deleteItem(int id);
     void debugItems() const;
     void saveItems() const;
     void loadItems();

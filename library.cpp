@@ -17,10 +17,40 @@ Library::Library()
 {
 }
 
+std::vector<Item *> Library::getItems() const
+{
+    return items;
+}
+
 void Library::addItem(Item *item)
 {
     items.push_back(item);
     saveItems();
+}
+
+void Library::deleteItem(int id)
+{
+    // Use an iterator to find the item with the given ID
+    auto it = items.begin();
+    while (it != items.end()) {
+        if ((*it)->getId() == id) {
+            break; // Found the item with the matching ID
+        }
+        it++;
+    }
+
+    // Check if an item was found
+    if (it != items.end()) {
+        // Delete the item to free memory
+        delete *it;
+        // Remove the item from the vector
+        items.erase(it); // Corrected: Erase only the single item at `it`
+        // Save the updated list of items to the JSON file
+        saveItems();
+        qDebug() << "Item with ID" << id << "deleted successfully.";
+    } else {
+        qDebug() << "Item with ID" << id << "not found.";
+    }
 }
 
 void Library::debugItems() const
