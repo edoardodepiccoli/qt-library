@@ -1,0 +1,38 @@
+[
+    {
+        "author": "Aldous Huxley",
+        "id": 376522728,
+        "title": "Brave New World",
+        "type": "book"
+    },
+    {
+        "id": 2,
+        "releaseYear": 2010,
+        "title": "Inception",
+        "type": "movie"
+    },
+    {
+        "id": 47698027,
+        "releaseYear": 1999,
+        "title": "The Matrix",
+        "type": "movie"
+    },
+    {
+        "author": "Aldous Huxley",
+        "id": 581690454,
+        "title": "Brave New World",
+        "type": "book"
+    },
+    {
+        "id": 2,
+        "releaseYear": 2010,
+        "title": "Inception",
+        "type": "movie"
+    },
+    {
+        "id": 989538969,
+        "releaseYear": 1999,
+        "title": "The Matrix",
+        "type": "movie"
+    }
+]

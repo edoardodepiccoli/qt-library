@@ -7,7 +7,7 @@
 #include "movie.h"
 
 Library::Library()
-    : jsonStoragePath("./items.json")
+    : jsonStoragePath("src/storage/items.json")
 {
     loadItemsFromJsonStorage(jsonStoragePath);
 }
