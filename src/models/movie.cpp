@@ -21,3 +21,8 @@ void Movie::setReleaseYear(int releaseYear)
 {
     this->releaseYear = releaseYear;
 }
+
+void Movie::debug() const
+{
+    qDebug() << "Movie - ID:" << getId() << ", Title:" << getTitle() << ", Release Year:" << releaseYear;
+}

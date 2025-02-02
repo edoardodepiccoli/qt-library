@@ -37,3 +37,8 @@ void Item::setTitle(const QString &title)
 {
     this->title = title;
 }
+
+void Item::debug() const
+{
+    qDebug() << "Item - ID:" << id << ", Title:" << title;
+}

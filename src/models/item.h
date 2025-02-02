@@ -2,6 +2,7 @@
 #define ITEM_H
 
 #include <QString>
+#include <QDebug>
 
 class Item
 {
@@ -21,6 +22,8 @@ public:
 
     void setId(int id);
     void setTitle(const QString &title);
+
+    virtual void debug() const;
 };
 
 #endif // ITEM_H

@@ -16,6 +16,8 @@ public:
 
     QString getAuthor() const;
     void setAuthor(const QString &author);
+
+    void debug() const override;
 };
 
 #endif // BOOK_H

@@ -23,3 +23,8 @@ void Book::setAuthor(const QString &author)
 {
     this->author = author;
 }
+
+void Book::debug() const
+{
+    qDebug() << "Book - ID:" << getId() << ", Title:" << getTitle() << ", Author:" << author;
+}

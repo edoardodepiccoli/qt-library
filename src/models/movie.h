@@ -16,6 +16,8 @@ public:
 
     int getReleaseYear() const;
     void setReleaseYear(int releaseYear);
+
+    void debug() const override;
 };
 
 #endif // MOVIE_H
