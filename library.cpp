@@ -78,7 +78,7 @@ void Library::saveItems() const
     storageFile.close();
 
     qDebug() << "JSON data written to storage";
-    qDebug() << "Generated JSON data:" << jsonDoc.toJson();
+    // qDebug() << "Generated JSON data:" << jsonDoc.toJson();
 }
 
 void Library::loadItems()

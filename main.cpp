@@ -7,17 +7,17 @@
 
 int main(int argc, char *argv[])
 {
-    Book *book = new Book("signore degli anelli", "jk rowling");
-    Movie *movie = new Movie("interstellar", 2015);
+    // Book *book = new Book("signore degli anelli", "jk rowling");
+    // Movie *movie = new Movie("interstellar", 2015);
 
-    Library *library = new Library();
+    // Library *library = new Library();
 
-    library->loadItems();
+    // library->loadItems();
 
-    library->addItem(book);
-    library->addItem(movie);
+    // library->addItem(book);
+    // library->addItem(movie);
 
-    library->debugItems();
+    // library->debugItems();
 
     QApplication a(argc, argv);
     MainWindow w;

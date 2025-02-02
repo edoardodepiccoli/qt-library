@@ -9,6 +9,7 @@ class Visitor
 {
 protected:
     Visitor();
+    ~Visitor() = default;
 public:
     virtual void visitItem(Item *item) const = 0;
     virtual void visitBook(Book *book) const = 0;
