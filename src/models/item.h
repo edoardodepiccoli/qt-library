@@ -6,11 +6,14 @@
 class Item
 {
 private:
-    int id;
     QString title;
+    int id;
+
+    static int generateRandomId();
 
 public:
     Item(int id, QString title);
+    Item(QString title);
     virtual ~Item();
 };
 

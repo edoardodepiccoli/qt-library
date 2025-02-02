@@ -6,7 +6,12 @@ set -e
 # Define the build directory
 BUILD_DIR="build"
 
-# Create the build directory if it doesn't exist
+# Delete the build directory if it exists
+if [ -d "$BUILD_DIR" ]; then
+    rm -rf $BUILD_DIR
+fi
+
+# Create the build directory
 mkdir -p $BUILD_DIR
 
 # Change to the build directory
@@ -19,3 +24,12 @@ qmake ..
 make
 
 echo "Build completed successfully in $BUILD_DIR."
+
+# Run the application
+cd ..
+
+echo "Running the application..."
+
+echo -e "\n####################################################################################################\n"
+
+./build/qt-library.app/Contents/MacOS/qt-library
