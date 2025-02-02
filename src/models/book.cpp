@@ -13,3 +13,13 @@ Book::Book(QString title, QString author)
 Book::~Book()
 {
 }
+
+QString Book::getAuthor() const
+{
+    return author;
+}
+
+void Book::setAuthor(const QString &author)
+{
+    this->author = author;
+}
