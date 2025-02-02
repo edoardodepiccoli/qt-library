@@ -8,7 +8,12 @@
 
 int main()
 {
+    system("clear");
+
     Library library;
+
+    // Delete all items in the library
+    library.deleteAllItems();
 
     // Create and add items to the library
     auto book1 = std::make_unique<Book>(1, "1984", "George Orwell");

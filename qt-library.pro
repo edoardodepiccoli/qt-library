@@ -16,3 +16,5 @@ HEADERS += src/models/item.h \
     src/models/book.h \
     src/models/movie.h \
     src/models/library.h
+
+RESOURCES += src/storage/items.json

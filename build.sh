@@ -7,9 +7,9 @@ set -e
 BUILD_DIR="build"
 
 # Delete the build directory if it exists
-if [ -d "$BUILD_DIR" ]; then
-    rm -rf $BUILD_DIR
-fi
+# if [ -d "$BUILD_DIR" ]; then
+#     rm -rf $BUILD_DIR
+# fi
 
 # Create the build directory
 mkdir -p $BUILD_DIR
@@ -25,11 +25,14 @@ make
 
 echo "Build completed successfully in $BUILD_DIR."
 
+# Copy the JSON file to the build directory
+# cp ../src/storage/items.json .
+
 # Run the application
 cd ..
 
 echo "Running the application..."
 
-echo -e "\n####################################################################################################\n"
+# echo -e "\n####################################################################################################\n"
 
 ./build/qt-library
