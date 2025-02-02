@@ -13,6 +13,7 @@ public:
 
     void addItem(Item *item);
     void debugItems() const;
+    void saveItems() const;
 };
 
 #endif // LIBRARY_H

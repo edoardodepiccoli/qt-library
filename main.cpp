@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     library->addItem(book);
     library->addItem(movie);
     library->debugItems();
+    library->saveItems();
 
     QApplication a(argc, argv);
     MainWindow w;
