@@ -6,8 +6,8 @@
 class Item
 {
 private:
-    QString title;
     int id;
+    QString title;
 
     static int generateRandomId();
 
@@ -15,6 +15,12 @@ public:
     Item(int id, QString title);
     Item(QString title);
     virtual ~Item();
+
+    int getId() const;
+    QString getTitle() const;
+
+    void setId(int id);
+    void setTitle(const QString &title);
 };
 
 #endif // ITEM_H

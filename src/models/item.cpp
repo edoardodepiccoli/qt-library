@@ -17,3 +17,23 @@ Item::Item(QString title) : id(generateRandomId()), title(title)
 Item::~Item()
 {
 }
+
+int Item::getId() const
+{
+    return id;
+}
+
+QString Item::getTitle() const
+{
+    return title;
+}
+
+void Item::setId(int id)
+{
+    this->id = id;
+}
+
+void Item::setTitle(const QString &title)
+{
+    this->title = title;
+}
