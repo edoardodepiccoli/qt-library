@@ -32,4 +32,4 @@ echo "Running the application..."
 
 echo -e "\n####################################################################################################\n"
 
-./build/qt-library.app/Contents/MacOS/qt-library
+./build/qt-library
