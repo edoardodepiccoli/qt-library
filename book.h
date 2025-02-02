@@ -9,6 +9,7 @@ private:
     QString author;
 public:
     Book(QString title, QString author);
+    Book(int id, QString title, QString author);
 
     virtual void accept(Visitor *visitor);
 

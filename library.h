@@ -14,6 +14,7 @@ public:
     void addItem(Item *item);
     void debugItems() const;
     void saveItems() const;
+    void loadItems();
 };
 
 #endif // LIBRARY_H

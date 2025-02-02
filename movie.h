@@ -9,6 +9,7 @@ private:
     int year;
 public:
     Movie(QString title, int year);
+    Movie(int id, QString title, int year);
 
     virtual void accept(Visitor *visitor);
 

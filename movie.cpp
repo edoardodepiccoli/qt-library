@@ -5,6 +5,11 @@ Movie::Movie(QString title, int year)
 {
 }
 
+Movie::Movie(int id, QString title, int year)
+    : Item::Item(id, title), year(year)
+{
+}
+
 void Movie::accept(Visitor *visitor)
 {
     visitor->visitMovie(this);

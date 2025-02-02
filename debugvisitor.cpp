@@ -20,7 +20,7 @@ void DebugVisitor::visitBook(Book *book) const
     qDebug()
         << "ID: " << book->getId()
         << "TITLE: " << book->getTitle()
-        << "ID: " << book->getAuthor();
+        << "AUTHOR: " << book->getAuthor();
 }
 
 void DebugVisitor::visitMovie(Movie *movie) const
@@ -28,5 +28,5 @@ void DebugVisitor::visitMovie(Movie *movie) const
     qDebug()
         << "ID: " << movie->getId()
         << "TITLE: " << movie->getTitle()
-        << "ID: " << movie->getYear();
+        << "YEAR: " << movie->getYear();
 }

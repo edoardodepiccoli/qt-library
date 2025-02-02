@@ -55,6 +55,15 @@ void Library::saveItems() const
     QJsonDocument jsonDoc(jsonArray);
 
     QFile storageFile("storage.json");
+
+    // if (storageFile.open(QIODevice::ReadOnly)) {
+    //     QByteArray existingData = storageFile.readAll();
+    //     storageFile.close();
+
+    //     qDebug() << "Existing content of storage.json:";
+    //     qDebug() << existingData;
+    // }
+
     if (!storageFile.open(QIODevice::WriteOnly)) {
         qDebug() << "Failed to open file for writing:" << storageFile.errorString();
         return;
@@ -70,4 +79,57 @@ void Library::saveItems() const
 
     qDebug() << "JSON data written to storage";
     qDebug() << "Generated JSON data:" << jsonDoc.toJson();
+}
+
+void Library::loadItems()
+{
+    QFile storageFile("storage.json");
+
+    if (!storageFile.open(QIODevice::ReadOnly)) {
+        qDebug() << "Failed to open file for reading:" << storageFile.errorString();
+        return;
+    }
+
+    QByteArray jsonData = storageFile.readAll();
+    storageFile.close();
+
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
+    if (jsonDoc.isNull()) {
+        qDebug() << "Failed to create JSON document.";
+        return;
+    }
+
+    if (!jsonDoc.isArray()) {
+        qDebug() << "JSON document is not an array.";
+        return;
+    }
+
+    QJsonArray jsonArray = jsonDoc.array();
+
+    for (const QJsonValue &value : jsonArray) {
+        if (!value.isObject()) {
+            qDebug() << "JSON value is not an object.";
+            continue;
+        }
+
+        QJsonObject itemObject = value.toObject();
+
+        QString type = itemObject["type"].toString();
+        int id = itemObject["id"].toInt();
+        QString title = itemObject["title"].toString();
+
+        if (type == "Book") {
+            QString author = itemObject["author"].toString();
+            Book *book = new Book(id, title, author);
+            items.push_back(book);
+        } else if (type == "Movie") {
+            int year = itemObject["year"].toInt();
+            Movie *movie = new Movie(id, title, year);
+            items.push_back(movie);
+        } else {
+            qDebug() << "Unknown item type:" << type;
+        }
+    }
+
+    qDebug() << "Items loaded from storage.json";
 }

@@ -7,6 +7,12 @@ Item::Item(QString title)
     id = QRandomGenerator::global()->bounded(0, 1000000001);
 }
 
+Item::Item(int id, QString title)
+    : title(title), id(id)
+{
+    id = QRandomGenerator::global()->bounded(0, 1000000001);
+}
+
 void Item::accept(Visitor *visitor)
 {
     visitor->visitItem(this);

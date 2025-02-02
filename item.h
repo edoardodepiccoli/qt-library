@@ -11,6 +11,7 @@ private:
     int id;
 public:
     Item(QString title);
+    Item(int id, QString title);
     virtual ~Item() = default;
 
     virtual void accept(Visitor *visitor);
