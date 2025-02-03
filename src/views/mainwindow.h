@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "../models/library.h"
 #include "components/sidebar.h"
+#include "components/searchview.h"
+#include "components/formview.h"
 
 class MainWindow : public QMainWindow
 {
@@ -11,9 +13,13 @@ class MainWindow : public QMainWindow
 
 private:
     Library *library;
-
-    // Main window components
     Sidebar *sidebar;
+    SearchView *searchView;
+    FormView *formView;
+
+private slots:
+    void handleSearchView();
+    void handleFormView();
 
 public:
     MainWindow(Library *library, QWidget *parent = nullptr);

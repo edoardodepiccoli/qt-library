@@ -74,6 +74,11 @@ void Sidebar::handleButtonClick()
         styleButton(selectedButton, false);
         styleButton(clickedButton, true);
         selectedButton = clickedButton;
+
+        if (clickedButton == searchButton)
+            emit searchButtonClicked();
+        else if (clickedButton == addButton)
+            emit addButtonClicked();
     }
 }
 

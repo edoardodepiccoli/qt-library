@@ -17,10 +17,32 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     sidebar->setFixedWidth(66);
     layout->addWidget(sidebar);
 
-    // Add stretch to push sidebar to the left
-    layout->addStretch();
+    // Create views
+    searchView = new SearchView(this);
+    formView = new FormView(this);
+
+    // Initially show search view and hide form view
+    layout->addWidget(searchView);
+    layout->addWidget(formView);
+    formView->hide();
+
+    // Connect sidebar signals
+    connect(sidebar, &Sidebar::searchButtonClicked, this, &MainWindow::handleSearchView);
+    connect(sidebar, &Sidebar::addButtonClicked, this, &MainWindow::handleFormView);
 
     setCentralWidget(centralWidget);
+}
+
+void MainWindow::handleSearchView()
+{
+    searchView->show();
+    formView->hide();
+}
+
+void MainWindow::handleFormView()
+{
+    searchView->hide();
+    formView->show();
 }
 
 MainWindow::~MainWindow()

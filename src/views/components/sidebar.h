@@ -16,6 +16,10 @@ private:
     void styleButton(QPushButton *button, bool selected);
     void setupButton(QPushButton *button, const QString &iconPath);
 
+signals:
+    void searchButtonClicked();
+    void addButtonClicked();
+
 private slots:
     void handleButtonClick();
 
