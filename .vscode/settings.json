@@ -27,7 +27,8 @@
         "ratio": "cpp",
         "variant": "cpp",
         "algorithm": "cpp",
-        "qwidget": "cpp"
+        "qwidget": "cpp",
+        "qhboxlayout": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }

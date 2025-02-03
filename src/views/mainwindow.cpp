@@ -11,6 +11,7 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     QWidget *centralWidget = new QWidget(this);
     QHBoxLayout *layout = new QHBoxLayout(centralWidget);
     layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
 
     // Create and add sidebar
     sidebar = new Sidebar(this);

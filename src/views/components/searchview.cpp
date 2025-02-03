@@ -6,7 +6,8 @@
 SearchView::SearchView(QWidget *parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins(8, 8, 8, 8);
+    layout->setSpacing(8);
 
     QWidget *testWidget = new QWidget(this);
 
