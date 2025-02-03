@@ -24,7 +24,7 @@ Sidebar::Sidebar(QWidget *parent) : QWidget(parent), selectedButton(nullptr)
     layout->addStretch();
 
     setLayout(layout);
-    setStyleSheet("QWidget { background-color: white; }");
+    setStyleSheet("QWidget { background-color: white; }"); // Sembra che non serva a niente
 }
 
 void Sidebar::setupButton(QPushButton *button, const QString &iconPath)
@@ -33,6 +33,7 @@ void Sidebar::setupButton(QPushButton *button, const QString &iconPath)
     button->setIconSize(QSize(24, 24));
     button->setIcon(QIcon(iconPath));
     button->setCursor(Qt::PointingHandCursor);
+
     connect(button, &QPushButton::clicked, this, &Sidebar::handleButtonClick);
 }
 
@@ -49,12 +50,14 @@ void Sidebar::styleButton(QPushButton *button, bool selected)
 
     button->setStyleSheet(style);
 
-    // Update icon color
+    // Update icon color (AI generated, don't understand it yet)
     QIcon icon = button->icon();
+
     QPixmap pixmap = icon.pixmap(QSize(24, 24));
     QPixmap newPixmap(pixmap.size());
     newPixmap.fill(selected ? QColor("#222222") : QColor("#D9D9D9"));
     newPixmap.setMask(pixmap.createMaskFromColor(Qt::transparent));
+
     button->setIcon(QIcon(newPixmap));
 }
 
