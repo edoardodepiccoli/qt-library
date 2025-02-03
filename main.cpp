@@ -1,3 +1,4 @@
+#include <QApplication>
 #include <iostream>
 #include <memory>
 
@@ -5,9 +6,11 @@
 #include "src/models/book.h"
 #include "src/models/movie.h"
 #include "src/models/library.h"
+#include "src/views/mainwindow.h"
 
-int main()
+int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
     system("clear");
 
     Library library;
@@ -55,5 +58,9 @@ int main()
         item->debug();
     }
 
-    return 0;
+    // Create and show the main window
+    MainWindow window(&library);
+    window.show();
+
+    return app.exec();
 }
