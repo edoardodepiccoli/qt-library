@@ -86,10 +86,8 @@ void Library::saveItemsToJsonStorage(const QString &filePath) const
     QFile file(filePath);
     if (file.open(QIODevice::WriteOnly))
     {
-        // qDebug() << "File opened for writing:" << filePath;
         file.write(jsonDoc.toJson());
         file.close();
-        // qDebug() << "File written and closed:" << filePath;
     }
     else
     {
@@ -102,14 +100,11 @@ void Library::loadItemsFromJsonStorage(const QString &filePath)
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly))
     {
-        // qDebug() << "Failed to open file for reading:" << filePath;
         return;
     }
 
-    // qDebug() << "File opened for reading:" << filePath;
     QByteArray data = file.readAll();
     file.close();
-    // qDebug() << "File read and closed:" << filePath;
 
     QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
     QJsonArray jsonArray = jsonDoc.array();
