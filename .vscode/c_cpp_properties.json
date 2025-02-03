@@ -5,7 +5,10 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/homebrew/Cellar/qt/**",
-                "/opt/homebrew/Cellar/qt/6.7.3/lib/QtGui.framework/Versions/A/Headers"
+                "/opt/homebrew/Cellar/qt/6.7.3/lib/QtGui.framework/Versions/A/Headers",
+                "/opt/homebrew/Cellar/qt/6.7.3/include",
+                "/opt/homebrew/Cellar/qt/6.7.3/include/QtWidgets",
+                "/opt/homebrew/Cellar/qt/6.7.3/lib/QtWidgets.framework/Versions/A/Headers",
             ],
             "defines": [],
             "macFrameworkPath": [
