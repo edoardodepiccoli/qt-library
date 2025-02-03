@@ -24,10 +24,12 @@ Sidebar::Sidebar(QWidget *parent) : QWidget(parent), selectedButton(nullptr)
     layout->addStretch();
 
     setLayout(layout);
-    setStyleSheet("QWidget { "
-                  "    background-color: #383838;"
-                  "    border: 1px solid white;"
-                  "}");
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Window, QColor("#383838")); // see https://wiki.qt.io/How_to_Change_the_Background_Color_of_QWidget
+
+    this->setAutoFillBackground(true);
+    this->setPalette(pal); // why is setting the palette necessary? should look into this
 }
 
 void Sidebar::setupButton(QPushButton *button, const QString &iconPath)

@@ -14,7 +14,7 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
 
     // Create and add sidebar
     sidebar = new Sidebar(this);
-    sidebar->setFixedWidth(150);
+    sidebar->setFixedWidth(66);
     layout->addWidget(sidebar);
 
     // Add stretch to push sidebar to the left
