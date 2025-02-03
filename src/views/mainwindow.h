@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "../models/library.h"
+#include "components/sidebar.h"
 
 class MainWindow : public QMainWindow
 {
@@ -10,6 +11,9 @@ class MainWindow : public QMainWindow
 
 private:
     Library *library;
+
+    // Main window components
+    Sidebar *sidebar;
 
 public:
     MainWindow(Library *library, QWidget *parent = nullptr);

@@ -19,4 +19,5 @@ HEADERS += src/models/item.h \
     src/views/mainwindow.h \
     src/views/components/sidebar.h
 
-RESOURCES += src/storage/items.json
+RESOURCES += src/storage/items.json \
+    src/views/assets/icons.qrc
