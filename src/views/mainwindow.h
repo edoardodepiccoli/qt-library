@@ -3,9 +3,6 @@
 
 #include <QMainWindow>
 #include "../models/library.h"
-#include "components/sidebar.h"
-#include "searchview.h"
-#include "formview.h"
 
 class MainWindow : public QMainWindow
 {
@@ -13,13 +10,6 @@ class MainWindow : public QMainWindow
 
 private:
     Library *library;
-    Sidebar *sidebar;
-    SearchView *searchView;
-    FormView *formView;
-
-private slots:
-    void handleSearchView();
-    void handleFormView();
 
 public:
     MainWindow(Library *library, QWidget *parent = nullptr);
