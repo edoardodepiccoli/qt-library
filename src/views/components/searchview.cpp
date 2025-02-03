@@ -15,14 +15,6 @@ SearchView::SearchView(QWidget *parent)
     searchSection = new SearchSection(this);
     layout->addWidget(searchSection, 1);
 
-    // Test widgets left
-    // QWidget *testWidget = new QWidget(this);
-    // QPalette testPalette = testWidget->palette();
-    // testPalette.setColor(QPalette::Window, QColor(255, 182, 193)); // Light pink
-    // testWidget->setAutoFillBackground(true);
-    // testWidget->setPalette(testPalette);
-    // layout->addWidget(testWidget, 1); // Add stretch factor of 1
-
     // Test widgets right
     QWidget *secondTestWidget = new QWidget(this);
     QPalette secondTestPalette = secondTestWidget->palette();
