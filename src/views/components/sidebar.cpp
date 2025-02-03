@@ -24,12 +24,15 @@ Sidebar::Sidebar(QWidget *parent) : QWidget(parent), selectedButton(nullptr)
     layout->addStretch();
 
     setLayout(layout);
-    setStyleSheet("QWidget { background-color: white; }"); // Sembra che non serva a niente
+    setStyleSheet("QWidget { "
+                  "    background-color: #383838;"
+                  "    border: 1px solid white;"
+                  "}");
 }
 
 void Sidebar::setupButton(QPushButton *button, const QString &iconPath)
 {
-    button->setFixedSize(40, 40);
+    button->setFixedSize(50, 50);
     button->setIconSize(QSize(24, 24));
     button->setIcon(QIcon(iconPath));
     button->setCursor(Qt::PointingHandCursor);
@@ -43,7 +46,7 @@ void Sidebar::styleButton(QPushButton *button, bool selected)
                         "QPushButton {"
                         "    border: none;"
                         "    border-radius: 12px;"
-                        "    margin-bottom: 4px;"
+                        "    margin-bottom: 8px;"
                         "    background-color: %1;"
                         "}")
                         .arg(selected ? "#D9D9D9" : "#222222");
