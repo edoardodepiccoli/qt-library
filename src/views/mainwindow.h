@@ -4,8 +4,8 @@
 #include <QMainWindow>
 #include "../models/library.h"
 #include "components/sidebar.h"
-#include "components/searchview.h"
-#include "components/formview.h"
+#include "searchview.h"
+#include "formview.h"
 
 class MainWindow : public QMainWindow
 {

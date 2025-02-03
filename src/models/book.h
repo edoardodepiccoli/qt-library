@@ -3,6 +3,7 @@
 
 #include <QString>
 #include "item.h"
+#include "../visitors/visitor.h"
 
 class Book : public Item
 {
@@ -18,6 +19,7 @@ public:
     void setAuthor(const QString &author);
 
     void debug() const override;
+    void accept(Visitor *visitor) override;
 };
 
 #endif // BOOK_H

@@ -26,3 +26,8 @@ void Movie::debug() const
 {
     qDebug() << "Movie - ID:" << getId() << ", Title:" << getTitle() << ", Release Year:" << releaseYear;
 }
+
+void Movie::accept(Visitor *visitor)
+{
+    visitor->visit(this);
+}

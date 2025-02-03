@@ -3,6 +3,7 @@
 
 #include <QString>
 #include "item.h"
+#include "../visitors/visitor.h"
 
 class Movie : public Item
 {
@@ -18,6 +19,7 @@ public:
     void setReleaseYear(int releaseYear);
 
     void debug() const override;
+    void accept(Visitor *visitor) override;
 };
 
 #endif // MOVIE_H

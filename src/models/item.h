@@ -4,6 +4,8 @@
 #include <QString>
 #include <QDebug>
 
+class Visitor; // Forward declaration
+
 class Item
 {
 private:
@@ -24,6 +26,7 @@ public:
     void setTitle(const QString &title);
 
     virtual void debug() const;
+    virtual void accept(Visitor *visitor) = 0;
 };
 
 #endif // ITEM_H

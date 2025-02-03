@@ -3,7 +3,7 @@
 
 #include <QWidget>
 
-#include "searchsection.h"
+#include "components/searchsection.h"
 
 class SearchView : public QWidget
 {

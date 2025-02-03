@@ -28,7 +28,8 @@
         "variant": "cpp",
         "algorithm": "cpp",
         "qwidget": "cpp",
-        "qhboxlayout": "cpp"
+        "qhboxlayout": "cpp",
+        "qlabel": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }

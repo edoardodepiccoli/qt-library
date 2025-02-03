@@ -9,7 +9,6 @@ class SearchSection : public QWidget
 private:
     QWidget *searchBar;
 
-
 public:
     SearchSection(QWidget *parent = nullptr);
     ~SearchSection();

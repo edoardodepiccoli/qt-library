@@ -7,9 +7,11 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     setWindowTitle("Qt Library");
     resize(800, 600);
 
-    // Create central widget and layout
+    // Create central widget
     QWidget *centralWidget = new QWidget(this);
-    QHBoxLayout *layout = new QHBoxLayout(centralWidget);
+
+    // Create layout
+    QHBoxLayout *layout = new QHBoxLayout(centralWidget); // Add a layout to the central widget
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
 
@@ -31,7 +33,7 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     connect(sidebar, &Sidebar::searchButtonClicked, this, &MainWindow::handleSearchView);
     connect(sidebar, &Sidebar::addButtonClicked, this, &MainWindow::handleFormView);
 
-    setCentralWidget(centralWidget);
+    setCentralWidget(centralWidget); // Set the central widget of the main window
 }
 
 void MainWindow::handleSearchView()

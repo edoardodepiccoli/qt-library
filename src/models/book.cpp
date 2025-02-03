@@ -28,3 +28,8 @@ void Book::debug() const
 {
     qDebug() << "Book - ID:" << getId() << ", Title:" << getTitle() << ", Author:" << author;
 }
+
+void Book::accept(Visitor *visitor)
+{
+    visitor->visit(this);
+}
