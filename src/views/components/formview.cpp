@@ -6,7 +6,7 @@
 FormView::FormView(QWidget *parent) : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setContentsMargins(8, 8, 8, 8);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
 
     QWidget *testWidget = new QWidget(this);

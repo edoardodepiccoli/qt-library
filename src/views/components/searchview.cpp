@@ -1,31 +1,37 @@
 #include "searchview.h"
 
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QPalette>
 
 SearchView::SearchView(QWidget *parent)
 {
+    // Create horizontal layout
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setContentsMargins(8, 8, 8, 8);
-    layout->setSpacing(8);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
 
-    QWidget *testWidget = new QWidget(this);
+    // Create and add search section
+    searchSection = new SearchSection(this);
+    layout->addWidget(searchSection, 1);
 
-    QPalette testPalette = testWidget->palette();
-    testPalette.setColor(QPalette::Window, QColor(255, 182, 193)); // Light pink
-    testWidget->setAutoFillBackground(true);
-    testWidget->setPalette(testPalette);
+    // Test widgets left
+    // QWidget *testWidget = new QWidget(this);
+    // QPalette testPalette = testWidget->palette();
+    // testPalette.setColor(QPalette::Window, QColor(255, 182, 193)); // Light pink
+    // testWidget->setAutoFillBackground(true);
+    // testWidget->setPalette(testPalette);
+    // layout->addWidget(testWidget, 1); // Add stretch factor of 1
 
+    // Test widgets right
     QWidget *secondTestWidget = new QWidget(this);
-
     QPalette secondTestPalette = secondTestWidget->palette();
     secondTestPalette.setColor(QPalette::Window, QColor(173, 216, 230)); // Light blue
     secondTestWidget->setAutoFillBackground(true);
     secondTestWidget->setPalette(secondTestPalette);
-
-    layout->addWidget(testWidget, 1);       // Add stretch factor of 1
     layout->addWidget(secondTestWidget, 1); // Add stretch factor of 1
 
+    // Set layout
     setLayout(layout);
 }
 
