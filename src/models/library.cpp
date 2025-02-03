@@ -89,10 +89,6 @@ void Library::saveItemsToJsonStorage(const QString &filePath) const
         file.write(jsonDoc.toJson());
         file.close();
     }
-    else
-    {
-        qDebug() << "Failed to open file for writing:" << filePath;
-    }
 }
 
 void Library::loadItemsFromJsonStorage(const QString &filePath)
