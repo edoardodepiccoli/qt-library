@@ -13,6 +13,8 @@ SOURCES += main.cpp \
     src/visitors/widgetvisitor.cpp \
     src/views/mainwindow.cpp \
     src/views/itemscontainer.cpp \
+    src/views/moviewidget.cpp \
+    src/views/bookwidget.cpp
 
 HEADERS += src/models/item.h \
     src/models/book.h \
@@ -22,6 +24,8 @@ HEADERS += src/models/item.h \
     src/visitors/widgetvisitor.h \
     src/views/mainwindow.h \
     src/views/itemscontainer.h \
+    src/views/moviewidget.h \
+    src/views/bookwidget.h
 
 RESOURCES += src/storage/items.json \
     resources.qrc
