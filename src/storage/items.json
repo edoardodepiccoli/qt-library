@@ -1,11 +1,5 @@
 [
     {
-        "author": "Aldous Huxley",
-        "id": 445574230,
-        "title": "Brave New World",
-        "type": "book"
-    },
-    {
         "id": 2,
         "releaseYear": 2010,
         "title": "Inception",
@@ -51,18 +45,6 @@
         "id": 475508575,
         "releaseYear": 1994,
         "title": "The Shawshank Redemption",
-        "type": "movie"
-    },
-    {
-        "id": 283516912,
-        "releaseYear": 1994,
-        "title": "Pulp Fiction",
-        "type": "movie"
-    },
-    {
-        "id": 820109307,
-        "releaseYear": 1999,
-        "title": "Fight Club",
         "type": "movie"
     }
 ]

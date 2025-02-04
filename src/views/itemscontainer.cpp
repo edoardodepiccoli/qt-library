@@ -43,7 +43,25 @@ void ItemsContainer::refreshItems()
     QWidget *itemWidget = visitor.getWidget();
     if (itemWidget)
     {
+      if (dynamic_cast<BookWidget *>(itemWidget))
+      {
+        connect(static_cast<BookWidget *>(itemWidget), &BookWidget::deleteRequested,
+                this, [this](Book *book)
+                { handleDeleteRequested(book); });
+      }
+      else if (dynamic_cast<MovieWidget *>(itemWidget))
+      {
+        connect(static_cast<MovieWidget *>(itemWidget), &MovieWidget::deleteRequested,
+                this, [this](Movie *movie)
+                { handleDeleteRequested(movie); });
+      }
       containerWidget->layout()->addWidget(itemWidget);
     }
   }
+}
+
+void ItemsContainer::handleDeleteRequested(Item *item)
+{
+  library->removeItem(item->getId());
+  refreshItems();
 }

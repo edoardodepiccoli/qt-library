@@ -7,7 +7,7 @@
 #include <QDebug>
 #include "clickablelabel.h"
 
-MovieWidget::MovieWidget(Movie *movie, QWidget *parent) : QWidget(parent)
+MovieWidget::MovieWidget(Movie *movie, QWidget *parent) : QWidget(parent), movie(movie)
 {
     setFixedHeight(150);
     setStyleSheet("background-color: #D9D9D9;");
@@ -73,5 +73,5 @@ MovieWidget::MovieWidget(Movie *movie, QWidget *parent) : QWidget(parent)
 void MovieWidget::handleDeleteClick()
 {
     qDebug() << "Delete button clicked for movie!";
-    emit deleteRequested();
+    emit deleteRequested(movie);
 }

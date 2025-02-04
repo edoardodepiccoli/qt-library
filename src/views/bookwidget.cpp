@@ -8,7 +8,7 @@
 
 #include "clickablelabel.h"
 
-BookWidget::BookWidget(Book *book, QWidget *parent) : QWidget(parent)
+BookWidget::BookWidget(Book *book, QWidget *parent) : QWidget(parent), book(book)
 {
   setFixedHeight(150);
   setStyleSheet("background-color: #D9D9D9;");
@@ -74,5 +74,5 @@ BookWidget::BookWidget(Book *book, QWidget *parent) : QWidget(parent)
 void BookWidget::handleDeleteClick()
 {
   qDebug() << "Delete button clicked for book!";
-  emit deleteRequested();
+  emit deleteRequested(book);
 }

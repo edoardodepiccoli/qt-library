@@ -24,6 +24,9 @@ private:
   QScrollArea *scrollArea;
 
   WidgetVisitor visitor;
+
+private slots:
+  void handleDeleteRequested(Item *item);
 };
 
 #endif // ITEMSCONTAINER_H

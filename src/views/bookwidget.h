@@ -11,10 +11,13 @@ public:
     explicit BookWidget(Book *book, QWidget *parent = nullptr);
 
 signals:
-    void deleteRequested();
+    void deleteRequested(Book *book);
 
 private slots:
     void handleDeleteClick();
+
+private:
+    Book *book;
 };
 
 #endif // BOOKWIDGET_H

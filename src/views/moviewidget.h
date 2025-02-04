@@ -11,10 +11,13 @@ public:
     explicit MovieWidget(Movie *movie, QWidget *parent = nullptr);
 
 signals:
-    void deleteRequested();
+    void deleteRequested(Movie *movie);
 
 private slots:
     void handleDeleteClick();
+
+private:
+    Movie *movie;
 };
 
 #endif // MOVIEWIDGET_H
