@@ -9,8 +9,16 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     setWindowTitle("Qt Library");
     resize(800, 600);
 
+    // Set dark background color
+    QPalette darkPalette;
+    darkPalette.setColor(QPalette::Window, QColor("#1E1E1E"));
+    setPalette(darkPalette);
+    setAutoFillBackground(true);
+
     // Create central widget
     QWidget *centralWidget = new QWidget(this);
+    centralWidget->setAutoFillBackground(true);
+    centralWidget->setPalette(darkPalette);
 
     // Create layout
     QHBoxLayout *layout = new QHBoxLayout(centralWidget);
