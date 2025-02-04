@@ -1,7 +1,0 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-    <qresource prefix="/assets">
-        <file>search.svg</file>
-        <file>add.svg</file>
-    </qresource>
-</RCC>
