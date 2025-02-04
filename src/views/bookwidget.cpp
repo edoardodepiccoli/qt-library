@@ -1,9 +1,12 @@
 #include "bookwidget.h"
+
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPainter>
 #include <QIcon>
+
+#include "clickablelabel.h"
 
 BookWidget::BookWidget(Book *book, QWidget *parent) : QWidget(parent)
 {
@@ -30,7 +33,6 @@ BookWidget::BookWidget(Book *book, QWidget *parent) : QWidget(parent)
   iconLabel->setPixmap(pixmap);
   iconLabel->setFixedSize(64, 64);
   iconLayout->addWidget(iconLabel, 0, Qt::AlignCenter);
-  mainLayout->addWidget(iconContainer);
 
   // Details part
   QWidget *detailsWidget = new QWidget();
@@ -44,5 +46,33 @@ BookWidget::BookWidget(Book *book, QWidget *parent) : QWidget(parent)
   detailsLayout->addWidget(titleLabel);
   detailsLayout->addWidget(authorLabel);
 
+  // Actions part
+  QWidget *actionsContainer = new QWidget();
+  actionsContainer->setStyleSheet("background-color: #D9D9D9;");
+  QHBoxLayout *actionsLayout = new QHBoxLayout(actionsContainer);
+  actionsLayout->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+  actionsLayout->setContentsMargins(0, 0, 10, 0);
+
+  // Delete icon (using ClickableLabel instead of QLabel)
+  ClickableLabel *deleteIconLabel = new ClickableLabel();
+  deleteIconLabel->setCursor(Qt::PointingHandCursor);
+  QIcon deleteIcon(":/icons/src/assets/delete_forever.svg");
+  QPixmap deletePixmap = deleteIcon.pixmap(24, 24);
+  QPainter deletePainter(&deletePixmap);
+  deletePainter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+  deletePainter.fillRect(deletePixmap.rect(), QColor("#323232"));
+  deleteIconLabel->setPixmap(deletePixmap);
+  deleteIconLabel->setFixedSize(24, 24);
+  connect(deleteIconLabel, &ClickableLabel::clicked, this, &BookWidget::handleDeleteClick);
+  actionsLayout->addWidget(deleteIconLabel);
+
+  mainLayout->addWidget(iconContainer);
   mainLayout->addWidget(detailsWidget);
+  mainLayout->addWidget(actionsContainer);
+}
+
+void BookWidget::handleDeleteClick()
+{
+  qDebug() << "Delete button clicked for book!";
+  emit deleteRequested();
 }

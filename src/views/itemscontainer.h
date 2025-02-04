@@ -17,9 +17,6 @@ public:
 
   void refreshItems();
 
-signals:
-  void itemClicked(Item *item);
-
 private:
   Library *library;
 

@@ -4,6 +4,8 @@
 #include <QLabel>
 #include <QPainter>
 #include <QIcon>
+#include <QDebug>
+#include "clickablelabel.h"
 
 MovieWidget::MovieWidget(Movie *movie, QWidget *parent) : QWidget(parent)
 {
@@ -45,4 +47,31 @@ MovieWidget::MovieWidget(Movie *movie, QWidget *parent) : QWidget(parent)
     detailsLayout->addWidget(yearLabel);
 
     mainLayout->addWidget(detailsWidget);
+
+    // Actions part
+    QWidget *actionsContainer = new QWidget();
+    actionsContainer->setStyleSheet("background-color: #D9D9D9;");
+    QHBoxLayout *actionsLayout = new QHBoxLayout(actionsContainer);
+    actionsLayout->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    actionsLayout->setContentsMargins(0, 0, 10, 0);
+
+    ClickableLabel *deleteIconLabel = new ClickableLabel();
+    deleteIconLabel->setCursor(Qt::PointingHandCursor);
+    QIcon deleteIcon(":/icons/src/assets/delete_forever.svg");
+    QPixmap deletePixmap = deleteIcon.pixmap(24, 24);
+    QPainter deletePainter(&deletePixmap);
+    deletePainter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+    deletePainter.fillRect(deletePixmap.rect(), QColor("#323232"));
+    deleteIconLabel->setPixmap(deletePixmap);
+    deleteIconLabel->setFixedSize(24, 24);
+    connect(deleteIconLabel, &ClickableLabel::clicked, this, &MovieWidget::handleDeleteClick);
+    actionsLayout->addWidget(deleteIconLabel);
+
+    mainLayout->addWidget(actionsContainer);
+}
+
+void MovieWidget::handleDeleteClick()
+{
+    qDebug() << "Delete button clicked for movie!";
+    emit deleteRequested();
 }
