@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "../models/library.h"
-#include "../visitors/widgetvisitor.h"
+#include "itemscontainer.h"
 
 class MainWindow : public QMainWindow
 {
@@ -15,11 +15,7 @@ public:
 
 private:
     Library *library;
-
-    QWidget *itemsContainer;
-    WidgetVisitor visitor;
-
-    void refreshItemsDisplay();
+    ItemsContainer *itemsContainer;
 };
 
 #endif // MAINWINDOW_H
