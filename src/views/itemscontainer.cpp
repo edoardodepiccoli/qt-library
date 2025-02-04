@@ -43,6 +43,8 @@ void ItemsContainer::refreshItems()
     QWidget *itemWidget = visitor.getWidget();
     if (itemWidget)
     {
+      // I know, this sucks and I should fix it, maybe creating a parent class ItemWidget
+      // I'll do it later
       if (dynamic_cast<BookWidget *>(itemWidget))
       {
         connect(static_cast<BookWidget *>(itemWidget), &BookWidget::deleteRequested,
