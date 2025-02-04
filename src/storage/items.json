@@ -12,12 +12,6 @@
         "type": "movie"
     },
     {
-        "author": "J.R.R. Tolkien",
-        "id": 745428503,
-        "title": "The Hobbit",
-        "type": "book"
-    },
-    {
         "author": "Frank Herbert",
         "id": 130518043,
         "title": "Dune",

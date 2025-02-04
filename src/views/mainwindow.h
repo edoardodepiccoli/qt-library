@@ -16,6 +16,9 @@ public:
 private:
     Library *library;
     ItemsContainer *itemsContainer;
+
+private slots:
+    void handleSearch();
 };
 
 #endif // MAINWINDOW_H

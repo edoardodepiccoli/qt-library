@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 MainWindow::MainWindow(Library *library, QWidget *parent)
     : QMainWindow(parent), library(library)
@@ -19,18 +20,31 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     centralWidget->setPalette(darkPalette);
 
     // Create layout
-    QHBoxLayout *layout = new QHBoxLayout(centralWidget);
+    QVBoxLayout *layout = new QVBoxLayout(centralWidget);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
 
+    // Create search bar
+    QLineEdit *searchBox = new QLineEdit(centralWidget);
+    searchBox->setPlaceholderText("Search...");
+    searchBox->setMaximumHeight(50);
+    searchBox->setStyleSheet("QLineEdit { padding: 10px; background-color: #2D2D2D; color: #FFFFFF; border: 1px solid #3D3D3D; }");
+    connect(searchBox, &QLineEdit::textChanged, this, &MainWindow::handleSearch);
+
     // Create and add items container
     itemsContainer = new ItemsContainer(library);
-    layout->addWidget(itemsContainer);
 
+    layout->addWidget(searchBox);
+    layout->addWidget(itemsContainer);
     setCentralWidget(centralWidget);
 
     // Initial refresh
     itemsContainer->refreshItems();
+}
+
+void MainWindow::handleSearch()
+{
+    qDebug() << "Search is happening!";
 }
 
 MainWindow::~MainWindow()

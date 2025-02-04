@@ -18,6 +18,8 @@ ItemsContainer::ItemsContainer(Library *library, QWidget *parent)
   // Create container for items
   containerWidget = new QWidget();
   QVBoxLayout *itemsLayout = new QVBoxLayout(containerWidget);
+  itemsLayout->setContentsMargins(0, 0, 0, 0);
+  itemsLayout->setSpacing(8);
   itemsLayout->setAlignment(Qt::AlignTop);
   scrollArea->setWidget(containerWidget);
 
