@@ -16,5 +16,53 @@
         "releaseYear": 1999,
         "title": "The Matrix",
         "type": "movie"
+    },
+    {
+        "author": "J.R.R. Tolkien",
+        "id": 745428503,
+        "title": "The Hobbit",
+        "type": "book"
+    },
+    {
+        "author": "Frank Herbert",
+        "id": 130518043,
+        "title": "Dune",
+        "type": "book"
+    },
+    {
+        "author": "Isaac Asimov",
+        "id": 594033451,
+        "title": "Foundation",
+        "type": "book"
+    },
+    {
+        "author": "William Gibson",
+        "id": 342587258,
+        "title": "Neuromancer",
+        "type": "book"
+    },
+    {
+        "id": 372380027,
+        "releaseYear": 1982,
+        "title": "Blade Runner",
+        "type": "movie"
+    },
+    {
+        "id": 475508575,
+        "releaseYear": 1994,
+        "title": "The Shawshank Redemption",
+        "type": "movie"
+    },
+    {
+        "id": 283516912,
+        "releaseYear": 1994,
+        "title": "Pulp Fiction",
+        "type": "movie"
+    },
+    {
+        "id": 820109307,
+        "releaseYear": 1999,
+        "title": "Fight Club",
+        "type": "movie"
     }
 ]

@@ -22,4 +22,4 @@ HEADERS += src/models/item.h \
     src/views/mainwindow.h \
 
 RESOURCES += src/storage/items.json \
-    src/views/assets/icons.qrc
+    resources.qrc
