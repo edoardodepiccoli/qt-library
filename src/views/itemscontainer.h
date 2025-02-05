@@ -12,11 +12,6 @@ class ItemsContainer : public QWidget
 {
   Q_OBJECT
 
-public:
-  explicit ItemsContainer(Library *library, QWidget *parent = nullptr);
-
-  void refreshItems();
-
 private:
   Library *library;
 
@@ -24,6 +19,14 @@ private:
   QScrollArea *scrollArea;
 
   WidgetVisitor visitor;
+
+  QString activeSearchQuery;
+
+public:
+  explicit ItemsContainer(Library *library, QWidget *parent = nullptr);
+
+  void refreshItems();
+  void setActiveSearchQuery(QString &query);
 
 private slots:
   void handleDeleteRequested(Item *item);

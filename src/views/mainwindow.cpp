@@ -25,7 +25,7 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     layout->setSpacing(0);
 
     // Create search bar
-    QLineEdit *searchBox = new QLineEdit(centralWidget);
+    searchBox = new QLineEdit(centralWidget);
     searchBox->setPlaceholderText("Search...");
     searchBox->setMaximumHeight(50);
     searchBox->setStyleSheet("QLineEdit { padding: 10px; background-color: #2D2D2D; color: #FFFFFF; border: 1px solid #3D3D3D; }");
@@ -44,7 +44,9 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
 
 void MainWindow::handleSearch()
 {
-    qDebug() << "Search is happening!";
+    QString searchTerm = searchBox->text().toLower(); // Get the search term and convert to lowercase for case-insensitive comparison
+    itemsContainer->setActiveSearchQuery(searchTerm);
+    itemsContainer->refreshItems();
 }
 
 MainWindow::~MainWindow()

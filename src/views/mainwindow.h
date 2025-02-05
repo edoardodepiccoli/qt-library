@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLineEdit>
+
 #include "../models/library.h"
 #include "itemscontainer.h"
 
@@ -16,6 +18,7 @@ public:
 private:
     Library *library;
     ItemsContainer *itemsContainer;
+    QLineEdit *searchBox;
 
 private slots:
     void handleSearch();

@@ -1,21 +1,9 @@
 [
     {
-        "id": 2,
-        "releaseYear": 2010,
-        "title": "Inception",
-        "type": "movie"
-    },
-    {
         "id": 3655517,
         "releaseYear": 1999,
         "title": "The Matrix",
         "type": "movie"
-    },
-    {
-        "author": "Frank Herbert",
-        "id": 130518043,
-        "title": "Dune",
-        "type": "book"
     },
     {
         "author": "Isaac Asimov",
