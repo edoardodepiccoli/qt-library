@@ -1,32 +1,74 @@
 [
     {
-        "id": 3655517,
+        "author": "George Orwell",
+        "id": 1,
+        "title": "1984",
+        "type": "book"
+    },
+    {
+        "author": "Aldous Huxley",
+        "id": 878783099,
+        "title": "Brave New World",
+        "type": "book"
+    },
+    {
+        "id": 2,
+        "releaseYear": 2010,
+        "title": "Inception",
+        "type": "movie"
+    },
+    {
+        "id": 220846085,
         "releaseYear": 1999,
         "title": "The Matrix",
         "type": "movie"
     },
     {
+        "author": "J.R.R. Tolkien",
+        "id": 482214425,
+        "title": "The Hobbit",
+        "type": "book"
+    },
+    {
+        "author": "Frank Herbert",
+        "id": 328392988,
+        "title": "Dune",
+        "type": "book"
+    },
+    {
         "author": "Isaac Asimov",
-        "id": 594033451,
+        "id": 475869539,
         "title": "Foundation",
         "type": "book"
     },
     {
         "author": "William Gibson",
-        "id": 342587258,
+        "id": 300581033,
         "title": "Neuromancer",
         "type": "book"
     },
     {
-        "id": 372380027,
+        "id": 906266745,
         "releaseYear": 1982,
         "title": "Blade Runner",
         "type": "movie"
     },
     {
-        "id": 475508575,
+        "id": 301029738,
         "releaseYear": 1994,
         "title": "The Shawshank Redemption",
+        "type": "movie"
+    },
+    {
+        "id": 206096327,
+        "releaseYear": 1994,
+        "title": "Pulp Fiction",
+        "type": "movie"
+    },
+    {
+        "id": 407822610,
+        "releaseYear": 1999,
+        "title": "Fight Club",
         "type": "movie"
     }
 ]

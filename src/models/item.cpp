@@ -1,4 +1,5 @@
 #include "item.h"
+
 #include <QRandomGenerator>
 
 int Item::generateRandomId()

@@ -2,6 +2,7 @@
 #define BOOK_H
 
 #include <QString>
+
 #include "item.h"
 #include "../visitors/visitor.h"
 
