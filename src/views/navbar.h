@@ -18,6 +18,10 @@ public:
 signals:
   void indexButtonPressed();
   void newButtonPressed();
+
+private slots:
+  void colorIndexButton();
+  void colorNewButton();
 };
 
 #endif

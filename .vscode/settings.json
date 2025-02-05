@@ -63,5 +63,5 @@
         "unordered_map": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++",
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "disabled"
 }

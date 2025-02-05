@@ -5,6 +5,8 @@
 
 #include "../models/library.h"
 #include "navbar.h"
+#include "indexpage.h"
+#include "newitempage.h"
 
 class MainWindow : public QMainWindow
 {
@@ -14,7 +16,8 @@ private:
   Library *library;
 
   Navbar *navbar;
-  int currentDisplayedPage; // index page = 0, new item page = 1
+  IndexPage *indexPage;
+  NewItemPage *newItemPage;
 
 public:
   MainWindow(Library *library);
