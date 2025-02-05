@@ -4,6 +4,7 @@
 #include <QWidget>
 
 #include "../models/library.h"
+#include "../models/item.h"
 
 class ItemsContainer : public QWidget
 {
@@ -14,6 +15,11 @@ private:
 
 public:
   ItemsContainer(QWidget *parent, Library *library);
+
+  void refreshItems();
+
+private slots:
+  void handleDeleteItem(int id);
 };
 
 #endif

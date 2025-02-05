@@ -1,11 +1,5 @@
 [
     {
-        "author": "George Orwell",
-        "id": 1,
-        "title": "1984",
-        "type": "book"
-    },
-    {
         "author": "Aldous Huxley",
         "id": 878783099,
         "title": "Brave New World",

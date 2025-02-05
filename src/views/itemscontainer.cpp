@@ -1,42 +1,75 @@
 #include "itemscontainer.h"
 
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QScrollArea>
 #include <QWidget>
+#include <QPushButton>
 
 ItemsContainer::ItemsContainer(QWidget *parent, Library *library)
     : QWidget(parent), library(library)
 {
+
+  refreshItems();
+}
+
+void ItemsContainer::refreshItems()
+{
+  // Remove and delete old layout if it exists
+  if (layout())
+  {
+    QLayoutItem *itemInsideLayout;
+    while ((itemInsideLayout = layout()->takeAt(0)) != nullptr)
+    {
+      delete itemInsideLayout->widget(); // Delete the widget inside the layout
+      delete itemInsideLayout;           // Delete the layout item itself
+    }
+    delete layout();
+  }
+
   QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-  // scroll area
+  // Scroll area
   QScrollArea *scrollArea = new QScrollArea(this);
   scrollArea->setWidgetResizable(true);
 
-  // container widget for the items
-  // apparently you cannot add items directly to the scrollbar
+  // Container widget for items
   QWidget *scrollWidget = new QWidget();
   QVBoxLayout *scrollLayout = new QVBoxLayout(scrollWidget);
 
-  // add items to the container widget
+  // Add items
   for (auto item : library->getAllItems())
   {
     QWidget *itemWidget = new QWidget(scrollWidget);
-    QVBoxLayout *itemWidgetLayout = new QVBoxLayout(itemWidget);
+    QHBoxLayout *itemWidgetLayout = new QHBoxLayout(itemWidget);
 
     QLabel *itemWidgetLabel = new QLabel(itemWidget);
     itemWidgetLabel->setText(item->getTitle());
 
+    QPushButton *itemWidgetDeleteButton = new QPushButton(itemWidget);
+    itemWidgetDeleteButton->setText("DELETE");
+
+    connect(itemWidgetDeleteButton, &QPushButton::clicked, this, [this, id = item->getId()]()
+            { handleDeleteItem(id); });
+
     itemWidgetLayout->addWidget(itemWidgetLabel);
+    itemWidgetLayout->addWidget(itemWidgetDeleteButton);
+
     scrollLayout->addWidget(itemWidget);
   }
 
   scrollWidget->setLayout(scrollLayout);
   scrollArea->setWidget(scrollWidget);
 
-  // add scroll area to main layout
+  // Add scroll area to main layout
   mainLayout->addWidget(scrollArea);
 
   setLayout(mainLayout);
+}
+
+void ItemsContainer::handleDeleteItem(int id)
+{
+  library->removeItem(id);
+  refreshItems();
 }
