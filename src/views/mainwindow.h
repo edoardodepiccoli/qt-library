@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include "../models/library.h"
+#include "navbar.h"
 
 class MainWindow : public QMainWindow
 {
@@ -11,6 +12,8 @@ class MainWindow : public QMainWindow
 
 private:
   Library *library;
+
+  Navbar *navbar;
 
 public:
   MainWindow(Library *library);

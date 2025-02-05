@@ -4,7 +4,7 @@
 #include <QString>
 #include <QDebug>
 
-class Visitor; // Forward declaration
+class Visitor;
 
 class Item
 {
