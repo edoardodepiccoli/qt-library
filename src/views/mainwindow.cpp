@@ -18,7 +18,7 @@ MainWindow::MainWindow(Library *library)
     navbar = new Navbar(centralWidget);
 
     // create index page and give it fixed dimensions
-    indexPage = new IndexPage(this);
+    indexPage = new IndexPage(this, library);
     indexPage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     // set background color

@@ -14,6 +14,7 @@ SOURCES += main.cpp \
     src/views/navbar.cpp \
     src/views/indexpage.cpp \
     src/views/newitempage.cpp \
+    src/views/itemscontainer.cpp \
 
 HEADERS += src/models/item.h \
     src/models/book.h \
@@ -24,6 +25,7 @@ HEADERS += src/models/item.h \
     src/views/navbar.h \
     src/views/indexpage.h \
     src/views/newitempage.h \
+    src/views/itemscontainer.h \
 
 RESOURCES += src/storage/items.json \
     resources.qrc
