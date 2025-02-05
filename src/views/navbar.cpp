@@ -17,8 +17,8 @@ Navbar::Navbar(QWidget *parent)
   navbarLayout->addWidget(indexButton);
   navbarLayout->addWidget(newButton);
 
-  connect(indexButton, &QPushButton::click, this, &Navbar::indexButtonPressed);
-  connect(newButton, &QPushButton::click, this, &Navbar::newButtonPressed);
+  connect(indexButton, &QPushButton::clicked, this, &Navbar::indexButtonPressed);
+  connect(newButton, &QPushButton::clicked, this, &Navbar::newButtonPressed);
 
   setLayout(navbarLayout);
 }

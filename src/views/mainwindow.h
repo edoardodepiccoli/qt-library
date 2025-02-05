@@ -14,9 +14,14 @@ private:
   Library *library;
 
   Navbar *navbar;
+  int currentDisplayedPage; // index page = 0, new item page = 1
 
 public:
   MainWindow(Library *library);
+
+private slots:
+  void displayIndexPage();
+  void displayNewItemPage();
 };
 
 #endif
