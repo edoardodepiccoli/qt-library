@@ -38,7 +38,10 @@ void ItemsContainer::refreshItems()
   QWidget *scrollWidget = new QWidget();
   QVBoxLayout *scrollLayout = new QVBoxLayout(scrollWidget);
 
-  // Add items
+  // add items
+  // should replace this with a visitor
+  // probably add a signal to the widget so you can still connect it to the
+  // handleDeleteItem method
   for (auto item : library->getAllItems())
   {
     QWidget *itemWidget = new QWidget(scrollWidget);
