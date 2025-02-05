@@ -1,11 +1,7 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
-    <qresource prefix="/icons">
-        <file>src/assets/add.svg</file>
-        <file>src/assets/delete_forever.svg</file>
-        <file>src/assets/edit.svg</file>
-        <file>src/assets/menu_book.svg</file>
-        <file>src/assets/movie.svg</file>
-        <file>src/assets/search.svg</file>
+    <qresource prefix="/">
+        <file>src/assets/book_icon.svg</file>
+        <file>src/assets/movie_icon.svg</file>
     </qresource>
 </RCC>

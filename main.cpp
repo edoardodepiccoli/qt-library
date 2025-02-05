@@ -77,8 +77,8 @@ int main(int argc, char *argv[])
     // }
 
     // Create and show the main window
-    MainWindow window(&library);
-    window.show();
+    // MainWindow window(&library);
+    // window.show();
 
-    return app.exec();
+    // return app.exec();
 }
