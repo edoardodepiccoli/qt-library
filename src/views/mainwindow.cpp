@@ -51,6 +51,23 @@ MainWindow::MainWindow(Library *library, QWidget *parent)
     newItemButton->setCursor(Qt::PointingHandCursor);
     newItemButton->setFixedHeight(50);
 
+    // SHOULD NOW CREATE A SLOT AND CONNECT THE PUSH OF THE BUTTON WITH THE DISPLAY OF A NEW VIEW
+    // FIRST CREATE THE VIEW, WHICH IS A FORM, AND JUST PUT THIS BELOW THE ACTIONS CONTAINER
+    // CREATE IN SEPARATE CLASS
+
+    // OR JUST MAYBE REWRITE THE ENTIRE PROJECT LIKE A CRUD WEBSITE
+    // NAVIGATION BUTTONS AT THE TOP
+    // NEW, CREATE, INDEX (with search like now), SHOW, EDIT, UPDATE, DELETE
+    // SO THE BUTTONS ARE
+    // ALL (index and search)
+    // NEW (new form)
+    // on item DELETE (just delete and refresh, like now)
+    // on item EDIT (new form with id bounded to item or smth)
+    // on item VIEW (think about that later)
+
+    // DONT BOTHER WITH UI BECAUSE IT IS USELESS FOR THE GRADE
+    // BIGGEST MISTAKE SO FAR WAS THIS
+
     actionsLayout->addWidget(searchBox, 0);
     actionsLayout->addWidget(newItemButton, 0);
     layout->addWidget(actionsContainer);
